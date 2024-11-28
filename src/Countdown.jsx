@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import mensaje1 from './images/mensaje1.png';
+import mensaje2 from './images/mensaje2.png';
 
 function Countdown() {
   const targetDate = new Date('2024-11-29T00:00:00');
   //const targetDate = new Date('2024-11-14T00:00:00'); // Fecha de ayer
-
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const [showLetter, setShowLetter] = useState(false);
 
@@ -38,16 +39,25 @@ function Countdown() {
     <div className="countdown">
       {showLetter ? (
         <div className="letter">
-          <h2>Mi carta para ti 💌</h2>
+          <h2>💌 Hay 324 mensajes guardados como favoritos en mi teléfono</h2>
+          <p>De esos 324, hay 2 favoritos que me has enviado que hoy quiero recordar:</p>
+          <div className="photos">
+            <div className="photo-container">
+              <img src={mensaje1} alt="Mensaje 1" />
+              <p className="photo-date">Fecha: 13/09/22</p>
+            </div>
+            <div className="photo-container">
+              <img src={mensaje2} alt="Mensaje 2" />
+              <p className="photo-date">Fecha: 2/09/22</p>
+            </div>
+          </div>
           <p>
-            Querido amor de mi vida,  
-            Estos dos años a tu lado han sido los más hermosos que jamás
-            podría haber imaginado. Cada momento contigo es un regalo, y 
-            espero seguir creando recuerdos a tu lado por muchos años más.  
-            Te amo con todo mi corazón. ❤️  
-            <br />
-            Con todo mi amor, [Tu Nombre]
+            Deseo con todo mi corazón que ese mismo deseo que tenías al inicio por verme, por pasar
+            un momento conmigo, y aunque solo fuera un minuto vernos,
+            que después de dos años sigas teniendo ese mismo deseo. Y que cuando veas
+            el reloj, sigas sintiendo ganas de verme, así como yo deseo verte cada día. 
           </p>
+          <p>Te amo para toda mi vida ❤️ </p>
         </div>
       ) : (
         <>
